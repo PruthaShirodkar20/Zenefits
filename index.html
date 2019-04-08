@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Places Near Me</title>
+    <style>
+      #map {
+        height: 425px;
+      }
+      html, body {
+        cursor: pointer;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #description {
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+      }
+
+      #infowindow-content .title {
+        font-weight: bold;
+      }
+
+      #infowindow-content {
+        display: none;
+      }
+
+      #map #infowindow-content {
+        display: inline;
+      }
+
+      .pac-card {
+        margin: 10px 10px 0 0;
+        border-radius: 2px 0 0 2px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        outline: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        background-color: #fff;
+        font-family: Roboto;
+      }
+
+      #pac-container {
+        padding-bottom: 12px;
+        margin-right: 12px;
+      }
+
+      .pac-controls {
+        display: inline-block;
+        padding: 5px 11px;
+      }
+
+      .pac-controls label {
+        font-family: Roboto;
+        font-size: 13px;
+        font-weight: 300;
+      }
+
+      #pac-input {
+        background-color: #fff;
+        font-size: 15px;
+        font-weight: 300;
+        margin-left: 12px;
+        padding: 0 11px 0 13px;
+        text-overflow: ellipsis;
+        width: 80%;
+        height: 50px;
+        border: 2px solid blue;
+        border-radius: 20px;
+      }
+
+      #pac-input:focus {
+        border-color: green;
+      }
+     
+      #specific{
+        background-color: #fff;
+        font-size: 15px;
+        font-weight: 300;
+        margin-left: 12px;
+        padding: 0 11px 0 13px;
+        text-overflow: ellipsis;
+        width: 80%;
+        height: 50px;
+        border: 2px solid blue;
+        border-radius: 20px;    
+        font-style:italic;
+      }
+        
+       #specific:focus {
+        border-color: green;
+        }
+        
+        #search-item, #clear-search, #short-dist, #dest-details{
+            background: #33adff;
+        }
+    
+        #title {
+        color: #fff;
+        background-color: #4d90fe;
+        font-size: 25px;
+        font-weight: 500;
+        padding: 6px 12px;
+        }
+        
+        thead{
+        background:#383838 ;
+        color:#ffffff;
+        }
+
+        #target {
+        width: 345px;
+        }  
+      </style>
+  </head>
+  <body>
+    <table>
+    <tr>
+        <td><input id="pac-input" class="controls" type="text" placeholder="Enter Location"></td>
+        <td><input id="specific" type="text" placeholder="Cafe/Restaurants...."/></td>
+        <td><button type="button" id="search-item" class="btn btn-outline-success btn-lg" onclick="searchPlaces()">Search</button></td>
+        <td><button type="button" id="clear-search" class="btn btn-outline-danger btn-lg" onclick="refresh()">Clear</button></td>
+        <td><button type="button" id="short-dist" class="btn btn-outline-danger btn-lg" onclick="calcShortDist()">Near Me</button></td>
+        <td><button type="button" id="dest-details" class="btn btn-outline-danger btn-lg" onclick="getDestinationDetails()">Details</button></td>
+    </tr>
+    <tr>
+    <div id="map"></div>
+    <div id="warnings-panel"></div>
+        </tr>
+    <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Address</th>
+      </tr>
+    </thead>
+    <tbody id="table-body">
+    </tbody>
+    </table>
+    </tr>
+    </table>  
+    <script src="scripts.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXngu8wdHftoNZOoSsbgGKqSMQCw5ZTHs&libraries=places&callback=initAutocomplete"
+         async defer></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" async defer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" async defer></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js" async defer></script>
+  </body>
+</html>

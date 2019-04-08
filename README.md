@@ -31,7 +31,6 @@ General functionalities-
 The application successfully detects the user's current location on initial rendering.
 
 Specific functionalities-
-
 1) Enter location input field: 
 i)  User must input the destination address in this field.
 ii) The address is autocompleted.

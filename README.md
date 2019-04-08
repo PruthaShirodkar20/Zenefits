@@ -25,7 +25,7 @@ IDE for editing purposes- atom or brackets prefered
 
 Open the index.html file by double clicking in a browser (chrome browser prefered)
 
-##Functionalities Implemented
+## Functionalities Implemented
 
 General functionalities-
 The application successfully detects the user's current location on initial rendering.
@@ -33,7 +33,7 @@ The application successfully detects the user's current location on initial rend
 Specific functionalities-
 
 1) Enter location input field: 
-i)User must input the destination address in this field.
+i)  User must input the destination address in this field.
 ii) The address is autocompleted.
 
 2)Cafe/Restaurants input field:
